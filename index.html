@@ -235,21 +235,21 @@
 
         // Ad Data: 20 ads with different titles, descriptions, and URLs, and different earnings
         const adsData = [
-            { title: 'Ad 1', description: 'আপনার তথ্য দিন এবং শেষে যা করতে বলে তাই করবেন যেমন সাইন আপ করা অ্যাপ ডাউনলোড করা আপনি অ্যাপ ডাউনলোড করে ১ ঘন্টা পর আবার ডিলিট করে দিয়েন সমস্যা নাই 0.020 USD!', url: 'https://luglawhaulsano.net/4/8635162/ad1', earnings: 0.020 },
+            { title: 'Ad 1', description: 'ওপেন করুন এবং আপনার তথ্য দিন 0.020 USD!', url: 'https://luglawhaulsano.net/4/8635162/ad1', earnings: 0.020 },
             { title: 'Ad 2', description: 'Watch and earn 4.00 USD!', url: 'https://example.com/ad2', earnings: 0.00 },
             { title: 'Ad 3', description: 'Watch and earn 6.00 USD!', url: 'https://example.com/ad3', earnings: 0.00 },
             { title: 'Ad 4', description: 'Watch and earn 3.010 USD!', url: 'https://example.com/ad4', earnings: 0.00 },
-            { title: 'Ad 5', description: 'আপনার তথ্য দিন এবং শেষে যা করতে বলে তাই করবেন যেমন সাইন আপ করা অ্যাপ ডাউনলোড করা আপনি অ্যাপ ডাউনলোড করে ১ ঘন্টা পর আবার ডিলিট করে দিয়েন সমস্যা নাই 0.025 USD!', url: 'https://www.profitablecpmrate.com/wqe02yerqh?key=f441e7cb2d4ca294e8301f7461a42644/ad5', earnings: 0.025 },
+            { title: 'Ad 5', description: 'ওপেন করুন এবং আপনার তথ্য দিন 0.025 USD!', url: 'https://www.profitablecpmrate.com/wqe02yerqh?key=f441e7cb2d4ca294e8301f7461a42644/ad5', earnings: 0.025 },
             { title: 'Ad 6', description: 'Watch and earn 6.00 USD!', url: 'https://example.com/ad6', earnings: 0.00 },
             { title: 'Ad 7', description: 'Watch and earn 7.50 USD!', url: 'https://example.com/ad7', earnings: 0.00 },
             { title: 'Ad 8', description: 'Watch and earn 8.00 USD!', url: 'https://example.com/ad8', earnings: 0.00 },
             { title: 'Ad 9', description: 'Watch and earn 9.00 USD!', url: 'https://example.com/ad9', earnings: 0.00 },
-            { title: 'Ad 10', description: 'আপনার তথ্য দিন এবং শেষে যা করতে বলে তাই করবেন যেমন সাইন আপ করা অ্যাপ ডাউনলোড করা আপনি অ্যাপ ডাউনলোড করে ১ ঘন্টা পর আবার ডিলিট করে দিয়েন সমস্যা নাই 0.020 USD!', url: 'https://luglawhaulsano.net/4/8635160/ad10', earnings: 0.020 },
+            { title: 'Ad 10', description: 'ওপেন করুন এবং আপনার তথ্য দিন 0.020 USD!', url: 'https://luglawhaulsano.net/4/8635160/ad10', earnings: 0.020 },
             { title: 'Ad 11', description: 'Watch and earn 5.50 USD!', url: 'https://example.com/ad11', earnings: 0.00 },
             { title: 'Ad 12', description: 'Watch and earn 6.50 USD!', url: 'https://example.com/ad12', earnings: 0.00 },
             { title: 'Ad 13', description: 'Watch and earn 7.50 USD!', url: 'https://example.com/ad13', earnings: 0.00 },
             { title: 'Ad 14', description: 'Watch and earn 8.00 USD!', url: 'https://example.com/ad14', earnings: 0.00 },
-            { title: 'Ad 15', description: 'আপনার তথ্য দিন এবং শেষে যা করতে বলে তাই করবেন যেমন সাইন আপ করা অ্যাপ ডাউনলোড করা আপনি অ্যাপ ডাউনলোড করে ১ ঘন্টা পর আবার ডিলিট করে দিয়েন সমস্যা নাই 0.025 USD!', url: 'https://www.profitablecpmrate.com/tksacrk3?key=9baa4aebd3285c8cc012e37eaffe36a0/ad15', earnings: 0.025 },
+            { title: 'Ad 15', description: 'ওপেন করুন এবং আপনার তথ্য দিন 0.025 USD!', url: 'https://www.profitablecpmrate.com/tksacrk3?key=9baa4aebd3285c8cc012e37eaffe36a0/ad15', earnings: 0.025 },
             { title: 'Ad 16', description: 'Watch and earn 7.00 USD!', url: 'https://example.com/ad16', earnings: 0.00 },
             { title: 'Ad 17', description: 'Watch and earn 9.00 USD!', url: 'https://example.com/ad17', earnings: 0.00 },
             { title: 'Ad 18', description: 'Watch and earn 10.00 USD!', url: 'https://example.com/ad18', earnings: 0.00 },
@@ -343,7 +343,7 @@
                 adContent.innerText = `${adsData[i].title}: ${adsData[i].description}`;
 
                 const adButton = document.createElement('button');
-                adButton.innerText = 'Watch Ad';
+                adButton.innerText = 'Start';
                 adButton.onclick = function () {
                     handleAdClick(`ad${i + 1}`, adsData[i].url, adsData[i].earnings);
                 };
