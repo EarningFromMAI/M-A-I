@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earning From M A I</title>
+
+    <!-- Added Meta Tag -->
+    <meta name="monetag" content="15438179d9bb91b7c7dcf7520da4e969"> <!-- এখানে কোডটি সন্নিবেশিত হয়েছে -->
+
     <style>
         /* General Styling */
         body {
@@ -245,118 +249,76 @@
             { title: 'Ad 7', description: 'Watch and earn 7.50 USD!', url: 'https://example.com/ad7', earnings: 0.00 },
             { title: 'Ad 8', description: 'Watch and earn 8.00 USD!', url: 'https://example.com/ad8', earnings: 0.00 },
             { title: 'Ad 9', description: 'Watch and earn 9.00 USD!', url: 'https://example.com/ad9', earnings: 0.00 },
-            { title: 'Ad 10', description: 'ওপেন করুন এবং আপনার তথ্য দিন 0.020 USD!', url: 'https://luglawhaulsano.net/4/8635160/ad10', earnings: 0.020 },
-            { title: 'Ad 11', description: 'Watch and earn 5.50 USD!', url: 'https://example.com/ad11', earnings: 0.00 },
-            { title: 'Ad 12', description: 'Watch and earn 6.50 USD!', url: 'https://example.com/ad12', earnings: 0.00 },
-            { title: 'Ad 13', description: 'Watch and earn 7.50 USD!', url: 'https://example.com/ad13', earnings: 0.00 },
-            { title: 'Ad 14', description: 'Watch and earn 8.00 USD!', url: 'https://example.com/ad14', earnings: 0.00 },
-            { title: 'Ad 15', description: 'ওপেন করুন এবং আপনার তথ্য দিন 0.025 USD!', url: 'https://www.profitablecpmrate.com/tksacrk3?key=9baa4aebd3285c8cc012e37eaffe36a0/ad15', earnings: 0.025 },
-            { title: 'Ad 16', description: 'Watch and earn 7.00 USD!', url: 'https://example.com/ad16', earnings: 0.00 },
-            { title: 'Ad 17', description: 'Watch and earn 9.00 USD!', url: 'https://example.com/ad17', earnings: 0.00 },
-            { title: 'Ad 18', description: 'Watch and earn 10.00 USD!', url: 'https://example.com/ad18', earnings: 0.00 },
-            { title: 'Ad 19', description: 'Watch and earn 8.50 USD!', url: 'https://example.com/ad19', earnings: 0.00 },
-            { title: 'Ad 20', description: 'Watch and earn 7.00 USD!', url: 'https://example.com/ad20', earnings: 0.00 }
+            { title: 'Ad 10', description: 'Watch and earn 10.00 USD!', url: 'https://example.com/ad10', earnings: 0.00 },
+            { title: 'Ad 11', description: 'Watch and earn 0.010 USD!', url: 'https://example.com/ad11', earnings: 0.010 },
+            { title: 'Ad 12', description: 'Watch and earn 0.030 USD!', url: 'https://example.com/ad12', earnings: 0.030 },
+            { title: 'Ad 13', description: 'Watch and earn 0.035 USD!', url: 'https://example.com/ad13', earnings: 0.035 },
+            { title: 'Ad 14', description: 'Watch and earn 0.015 USD!', url: 'https://example.com/ad14', earnings: 0.015 },
+            { title: 'Ad 15', description: 'Watch and earn 0.045 USD!', url: 'https://example.com/ad15', earnings: 0.045 },
+            { title: 'Ad 16', description: 'Watch and earn 0.040 USD!', url: 'https://example.com/ad16', earnings: 0.040 },
+            { title: 'Ad 17', description: 'Watch and earn 0.050 USD!', url: 'https://example.com/ad17', earnings: 0.050 },
+            { title: 'Ad 18', description: 'Watch and earn 0.020 USD!', url: 'https://example.com/ad18', earnings: 0.020 },
+            { title: 'Ad 19', description: 'Watch and earn 0.030 USD!', url: 'https://example.com/ad19', earnings: 0.030 },
+            { title: 'Ad 20', description: 'Watch and earn 0.025 USD!', url: 'https://example.com/ad20', earnings: 0.025 }
         ];
 
-        // Toggle Menu Popup
+        // Display Ads
+        function displayAds() {
+            const adsContainer = document.getElementById('adsContainer');
+            adsContainer.innerHTML = '';
+
+            adsData.forEach((ad, index) => {
+                const adElement = document.createElement('div');
+                adElement.classList.add('ad-card');
+                adElement.innerHTML = `
+                    <h4>${ad.title}</h4>
+                    <p>${ad.description}</p>
+                    <a href="${ad.url}" target="_blank"><button>Visit Ad</button></a>
+                    <p><strong>Earned: ${ad.earnings.toFixed(3)} USD</strong></p>
+                    <button onclick="earnFromAd(${ad.earnings})">Claim Earnings</button>
+                `;
+                adsContainer.appendChild(adElement);
+            });
+        }
+
+        // Claim Earnings from an Ad
+        function earnFromAd(amount) {
+            balance += amount;
+            localStorage.setItem('balance', balance.toFixed(3));
+            updateBalance();
+        }
+
+        // Update Balance
+        function updateBalance() {
+            document.getElementById('balance').textContent = `${balance.toFixed(3)} USD`;
+        }
+
+        // Toggle Menu
         function toggleMenu() {
             const menuPopup = document.getElementById('menuPopup');
-            menuPopup.style.display = menuPopup.style.display === 'block' ? 'none' : 'block';
+            menuPopup.style.display = (menuPopup.style.display === 'block') ? 'none' : 'block';
         }
 
-        // Save Name and Close Popup
+        // Save Username
         function saveName() {
-            const username = document.getElementById('usernameInput').value.trim();
-            if (username) {
+            const username = document.getElementById('usernameInput').value;
+            if (username.trim() !== '') {
                 localStorage.setItem('username', username);
-                document.getElementById('profileName').innerText = username;
+                document.getElementById('profileName').textContent = username;
                 document.getElementById('popupForm').style.display = 'none';
-            } else {
-                alert('Please enter a valid name.');
             }
         }
 
-        // Handle Ad Click
-        function handleAdClick(adId, url, earnings) {
-            let lastClicked = localStorage.getItem(adId + '_lastClicked');
-            let now = Date.now();
-
-            // Check if the ad has been clicked within the last 24 hours
-            if (lastClicked && (now - lastClicked < 24 * 60 * 60 * 1000)) {
-                alert('You can only watch this ad once every 24 hours.');
-                return;
-            }
-
-            const adWindow = window.open(url, '_blank');
-            const adStartTime = Date.now();
-
-            const checkAdInterval = setInterval(() => {
-                if (adWindow.closed) {
-                    const elapsedTime = (Date.now() - adStartTime) / 1000; // in seconds
-
-                    if (elapsedTime >= 60) {
-                        // Update balance only if the ad was watched for at least 60 seconds
-                        alert(`You have earned ${earnings} USD!`);
-                        balance += earnings;
-                        localStorage.setItem('balance', balance.toFixed(2));
-                        document.getElementById('balance').innerText = `${balance.toFixed(2)} USD`;
-                        localStorage.setItem(adId + '_lastClicked', now);
-
-                        // Hide the ad for 24 hours after successful earnings
-                        document.getElementById(adId).style.display = 'none';
-                    } else {
-                        alert('You must watch the ad for at least 60 seconds to earn!');
-                    }
-
-                    clearInterval(checkAdInterval);
-                }
-            }, 1000);
-        }
-
-        // Load User Info and Ads on Page Load
-        window.onload = function () {
-            const savedName = localStorage.getItem('username');
-            if (savedName) {
-                document.getElementById('profileName').innerText = savedName;
-                document.getElementById('popupForm').style.display = 'none';
+        // On Page Load
+        window.onload = function() {
+            const savedUsername = localStorage.getItem('username');
+            if (savedUsername) {
+                document.getElementById('profileName').textContent = savedUsername;
             } else {
                 document.getElementById('popupForm').style.display = 'flex';
             }
-
-            const savedBalance = parseFloat(localStorage.getItem('balance') || '0.000');
-            document.getElementById('balance').innerText = `${savedBalance.toFixed(2)} USD`;
-
-            // Show ads
-            const adsContainer = document.getElementById('adsContainer');
-            adsContainer.innerHTML = ''; // Clear the container before adding ads
-
-            for (let i = 0; i < totalAds; i++) {
-                const adCard = document.createElement('div');
-                adCard.classList.add('ad-card');
-                adCard.id = `ad${i + 1}`;
-
-                const adContent = document.createElement('p');
-                adContent.innerText = `${adsData[i].title}: ${adsData[i].description}`;
-
-                const adButton = document.createElement('button');
-                adButton.innerText = 'Start';
-                adButton.onclick = function () {
-                    handleAdClick(`ad${i + 1}`, adsData[i].url, adsData[i].earnings);
-                };
-
-                adCard.appendChild(adContent);
-                adCard.appendChild(adButton);
-                adsContainer.appendChild(adCard);
-            }
-
-            // Hide ads if they were watched in the last 24 hours
-            for (let i = 0; i < totalAds; i++) {
-                let adLastClicked = localStorage.getItem(`ad${i + 1}_lastClicked`);
-                let now = Date.now();
-                if (adLastClicked && (now - adLastClicked < 24 * 60 * 60 * 1000)) {
-                    document.getElementById(`ad${i + 1}`).style.display = 'none';
-                }
-            }
+            updateBalance();
+            displayAds();
         };
     </script>
 </body>
