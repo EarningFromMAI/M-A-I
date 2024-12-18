@@ -1,113 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earning From M A I</title>
-
-    <!-- Add the meta tag you provided -->
-    <meta name="monetag" content="15438179d9bb91b7c7dcf7520da4e969">
-
-    <script async src="https://cdn.monetag.io/ad.js"></script>
+    <title>Earning From Ads | MR UNKNOWN</title>
     
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
     <style>
-        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
         }
-
         .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             width: 90%;
-            max-width: 700px;
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 20px;
-            text-align: center;
+            max-width: 500px;
         }
-
-        .balance {
-            font-size: 1.6rem;
-            color: #28a745;
-            font-weight: bold;
-            margin-bottom: 20px;
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
-
-        .ad-card {
-            padding: 15px;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: background 0.3s;
+        .btn {
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-
-        .ad-card:hover {
-            background: #e9e9e9;
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
         }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #666;
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+        }
+        .btn-red {
+            background-color: #F44336;
+            color: #ffffff;
+            border: none;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Profile Section -->
-        <div class="profile-info">
-            <img src="https://via.placeholder.com/60" alt="Profile Image" id="profileImage">
-            <h3 id="profileName">User Name</h3>
-        </div>
 
-        <!-- Balance Section -->
-        <div class="balance-info">
-            <h3>Your Balance:</h3>
-            <div class="balance" id="balance">0.000 USD</div>
-        </div>
-
-        <!-- Ads Section -->
-        <div class="ad-container">
-            <!-- Monetag Ad -->
-            <div class="monetag-ad" data-placement-id="YOUR_PLACEMENT_ID"></div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>All rights reserved © 2024. Contact: <a href="https://t.me/mdazizulislam1">Admin</a></p>
-        </footer>
+<div class="container animate__animated animate__fadeIn">
+    
+ 
+    <h2>Watch Ads and Earn Rewards!</h2>
+    <div>
+        <button id="showAdButton1" class="btn btn-primary">Show Ad 1</button>
+        <button id="showAdButton2" class="btn btn-success">Show Ad 2</button>
+        <button id="showAdButton3" class="btn btn-warning">Show Ad 3</button>
+        <button id="showAdButton4" class="btn btn-red">Show Ad 4</button>
     </div>
+    <script type="text/javascript">
+	atOptions = {
+		'key' : 'b6a638c04543878bcc4514278c855cf7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
 
-    <script>
-        let balance = parseFloat(localStorage.getItem('balance') || '0.000');
+</div>
 
-        // Update balance display
-        function updateBalance() {
-            document.getElementById('balance').textContent = `Your Balance: ${balance.toFixed(3)} USD`;
-            localStorage.setItem('balance', balance);
-        }
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        // Handle ad click and earnings
-        function watchAd(earnings) {
-            balance += earnings;  // Increase balance based on ad earnings
-            updateBalance();  // Update the balance displayed on the page
-            alert(`You earned ${earnings.toFixed(3)} USD for watching this ad!`);
-        }
+<!-- Toastr JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-        // Initial balance display
-        updateBalance();
-    </script>
+<script>
+    function showAd(buttonId) {
+        show_8576739().then(() => {
+            // Reward function
+            toastr.success(`You have watched the ad on ${buttonId} and earned a reward!`, 'Congratulations');
+        }).catch((error) => {
+            toastr.error('There was an error displaying the ad.', 'Error');
+            console.error(error);
+        });
+    }
+
+    document.getElementById('showAdButton1').addEventListener('click', function() {
+        showAd('Show Ad 1');
+    });
+
+    document.getElementById('showAdButton2').addEventListener('click', function() {
+        showAd('Show Ad 2');
+    });
+
+    document.getElementById('showAdButton3').addEventListener('click', function() {
+        showAd('Show Ad 3');
+    });
+    document.getElementById('showAdButton4').addEventListener('click', function() {
+        showAd('Show Ad 4');
+    });
+</script>
+
 </body>
 </html>
